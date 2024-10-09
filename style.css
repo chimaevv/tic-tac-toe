@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    /*-- means variable, winning black svairable highlights the background for when a user has wont three in a row  */
+    --pink:rgb(228, 174, 196);
+    --winning-blocks: rgb(32, 32, 32);
+
+}
+body{
+    color: var(--pink);
+    font-family: 'Source Code Pro';
+}
+h1{
+    font-size: 54px;
+
+}
+.container{
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(41, 39, 39);
+}
+#gameboard{
+width: 450px;
+display: flex;
+flex-wrap: wrap;
+/* flex rap elements so they are wrapped to a 2nd row  */
+margin-top:40px;
+}
+.box{
+    /* each box is set to a fixed hieght and weight and slign the items center so whatever text is inside a box. it is centered vertically and horizontally */
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink);
+    font-size: 120px;
+    /* this ensures there is no border on the left or top */
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+
+}
+/* this ensures that we remove the inverse borders of the table */
+/* removes border right for every 3rd element */
+.box:nth-child(3n){
+    border-right: none;
+}
+/* count at the 6 child that has the box class, and the remaining numbers (bottom 3: 6,7,8) remove bottom borders */
+.box:nth-child(6) ~ .box{
+    border-bottom: none;
+}
+
+button{
+    padding: 10 px 20 px;
+    border-radius: 10px;
+    background-color: var(--pink);
+    color: #333;
+    border-color: var(--pink);
+    font-size: 18px;
+    transition: 200ms transform;
+    font-weight: 600;
+
+}
+button:hover{
+cursor: pointer;
+transform: translateY(-8px);
+}
